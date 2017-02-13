@@ -8,7 +8,7 @@
 
 
 
-class Song {
+struct Song {
     
     let name: String
     let album: String
@@ -20,4 +20,4 @@ class Song {
         self.length = length
     }
     
-}
+}//implements bag of strings for storage and passing to songCell members

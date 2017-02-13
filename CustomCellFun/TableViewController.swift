@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
         let ninthTrack = Song(name: "The Lady in My Life", album: "Thriller", length: "5:00")
         
         thrillerAlbum = [firstTrack, secondTrack, thirdTrack, fourthTrack, fifthTrack, sixthTrack, seventhTrack, eightTrack, ninthTrack]
-    }
+    }//data storage for songs
 
     
     // MARK: - Table view data source
@@ -40,25 +40,25 @@ class TableViewController: UITableViewController {
         
         return 1
         
-    }
+    }//1 section in the view
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return thrillerAlbum.count
         
-    }
+    }//#rows from array in data storage
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SongCell
-        
+                                                                            //typecast as custom cell type ⬆️
         cell.backgroundColor = UIColor.gray
-
-        let song = thrillerAlbum[indexPath.row]
+        //⬆️changes cell bgColor to gray⬆️
+        let song = thrillerAlbum[indexPath.row] //puts the cell into the appropriate table row based on array position
         
-        cell.nameOfSongLabel.text? = song.name
-        cell.lengthOfSongLabel.text? = song.length
+        cell.nameOfSongLabel.text? = song.name      //assigns song name to upper label
+        cell.lengthOfSongLabel.text? = song.length  //assigns song length to lower label
         
         return cell
     }
